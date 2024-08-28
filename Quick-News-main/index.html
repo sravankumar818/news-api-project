@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="reload()">
+                <img src="./assets/logo.png" alt="logo" style="width: 110px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> 
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="India" onclick="onNavItemClick('india')">India</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="World" onclick="onNavItemClick('world')">World</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Business" onclick="onNavItemClick('business')">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Technology" onclick="onNavItemClick('technology')">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Sports" onclick="onNavItemClick('sports')">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Science" onclick="onNavItemClick('science')">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Health" onclick="onNavItemClick('health')">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Politics" onclick="onNavItemClick('politics')">Politics</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 news-input" type="search" placeholder="e.g. Science" aria-label="Search" id="search-text">
+                    <button class="btn search-button" type="button" id="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container mt-4">
+            <div class="row" id="cards-container">
+                <!-- News Cards will go here -->
+            </div>
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://placehold.jp/400x200.png" alt="news-img" class="card-img-top" id="news-img">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="news-title">This is the Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted" id="news-source">End Gadget 26/07/2024</h6>
+                    <p class="card-text" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestias numquam voluptatem qui perspiciatis quos officiis fugit possimus, obcaecati nulla.</p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

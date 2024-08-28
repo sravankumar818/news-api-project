@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+    --search-button-bg-color: #ee0b4f;
+    --search-button-hover-bg-color: #9A1750; 
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    margin-right: 45px;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    box-shadow: 0 0 4px var(--secondary-text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: top 0.3s;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.nav-link {
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--search-button-bg-color);
+}
+
+.nav-item.active .nav-link {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.news-input {
+    width: 200px;
+    height: 32px;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid var(--secondary-text-color);
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--search-button-bg-color);
+    color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--search-button-hover-bg-color);
+    color: white;
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+    transition: margin-top 0.3s;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 360px;
+    min-height: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px var(--secondary-text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px var(--secondary-text-color);
+    transform: translateY(-2px);
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        transition: all 0.3s ease;
+        background-color: white;
+        padding: 10px;
+        z-index: 100;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    .navbar-collapse.show {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .navbar-nav {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    .news-input {
+        width: 150px;
+    }
+
+    .search-button {
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 100%;
+    }
+}
